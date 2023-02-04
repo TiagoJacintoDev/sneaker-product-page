@@ -44,7 +44,7 @@ export const ImageSlideModal = ({
         className="fixed top-0 left-0 z-10 h-full w-full bg-black opacity-70"
         onClick={closeImageSlideModal}
       />
-      <div className="fixed top-1/2 left-1/2 z-20 w-4/12 -translate-x-1/2 -translate-y-1/2">
+      <div className="fixed top-1/2 left-1/2 z-20 w-[28%] -translate-x-1/2 -translate-y-1/2">
         <div className="relative">
           <button onClick={closeImageSlideModal}>
             <img
