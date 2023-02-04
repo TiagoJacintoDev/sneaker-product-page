@@ -12,6 +12,7 @@ export const Navbar = ({ cartQuantity = 0 }: Props) => {
     <div className="mx-[3.5%] flex items-center justify-between py-3 lg:mx-[11.5%] lg:border-b lg:py-9">
       <div className="flex items-center gap-4 lg:gap-14">
         <img className="lg:hidden" src={burgerMenu} alt="menu" />
+<<<<<<< HEAD
         <img className="cursor-pointer" src={logo} alt="logo" />
         <ul className="flex gap-8 text-[15px] text-neutral-dark-grayish-blue max-lg:hidden">
           <li className="relative after:absolute after:left-0 after:-bottom-[3.2rem] after:h-1 after:w-full after:scale-x-0 after:bg-primary-orange after:transition-all after:duration-200 after:content-[''] hover:after:scale-x-100">
@@ -27,6 +28,23 @@ export const Navbar = ({ cartQuantity = 0 }: Props) => {
             <a href="#">About</a>
           </li>
           <li className="relative after:absolute after:left-0 after:-bottom-[3.2rem] after:h-1 after:w-full after:scale-x-0 after:bg-primary-orange after:transition-all after:duration-200 after:content-[''] hover:after:scale-x-100">
+=======
+        <img src={logo} alt="logo" />
+        <ul className="flex gap-8 text-[15px] text-neutral-dark-grayish-blue max-lg:hidden">
+          <li className="relative after:absolute after:left-0 after:-bottom-[3.2rem] after:h-1 after:w-full after:scale-x-0 after:bg-primary-orange after:transition-all after:content-[''] hover:after:scale-x-100">
+            <a href="#">Collections</a>
+          </li>
+          <li className="relative after:absolute after:left-0 after:-bottom-[3.2rem] after:h-1 after:w-full after:scale-x-0 after:bg-primary-orange after:transition-all after:content-[''] hover:after:scale-x-100">
+            <a href="#">Men</a>
+          </li>
+          <li className="relative after:absolute after:left-0 after:-bottom-[3.2rem] after:h-1 after:w-full after:scale-x-0 after:bg-primary-orange after:transition-all after:content-[''] hover:after:scale-x-100">
+            <a href="#">Women</a>
+          </li>
+          <li className="relative after:absolute after:left-0 after:-bottom-[3.2rem] after:h-1 after:w-full after:scale-x-0 after:bg-primary-orange after:transition-all after:content-[''] hover:after:scale-x-100">
+            <a href="#">About</a>
+          </li>
+          <li className="relative after:absolute after:left-0 after:-bottom-[3.2rem] after:h-1 after:w-full after:scale-x-0 after:bg-primary-orange after:transition-all after:content-[''] hover:after:scale-x-100">
+>>>>>>> da91c12086d4f8c20e1a15e33008b21eb22dbaff
             <a href="#">Contact</a>
           </li>
         </ul>
