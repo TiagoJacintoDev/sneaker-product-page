@@ -58,13 +58,13 @@ export const Product = ({ addToCart }: Props) => {
         <div className="flex items-center max-lg:flex-col lg:mx-[11.5%] lg:my-16 lg:w-[1100px] lg:gap-40">
           <div className="relative max-lg:h-[400px] max-lg:w-full">
             <button
-              className="absolute top-1/2 left-6 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-white lg:hidden"
+              className="absolute top-1/2 left-2 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-white lg:hidden"
               onClick={selectPreviousImage}
             >
               <img src={previous} alt="previous image" />
             </button>
             <button
-              className="absolute top-1/2 right-6 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-white lg:hidden"
+              className="absolute top-1/2 right-2 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-white lg:hidden"
               onClick={selectNextImage}
             >
               <img src={next} alt="next image" />
