@@ -20,12 +20,10 @@ module.exports = {
         },
       },
       fontSize: {
-        paragraph: "1rem",
         "company-title": "0.8125rem",
         "product-title": "2.75rem",
         "product-title-mobile": "1.75rem",
         "product-price": "1.75rem",
-        "burger-menu-items": "1.125rem",
       },
     },
   },
