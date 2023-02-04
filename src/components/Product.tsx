@@ -11,6 +11,7 @@ import previous from "../images/icon-previous.svg";
 import next from "../images/icon-next.svg";
 import { useState } from "react";
 import { ImageSlideModal } from "./ImageSlideModal";
+import { useMediaQuery } from "react-responsive";
 
 interface Props {
   addToCart: (
@@ -20,6 +21,10 @@ interface Props {
 }
 
 export const Product = ({ addToCart }: Props) => {
+  const isDesktopOrLaptop = useMediaQuery({
+    query: "(min-width: 1024px)",
+  });
+
   const [productQuantity, setProductQuantity] = useState(1);
   const images = [productImage1, productImage2, productImage3, productImage4];
   const thumbImages = [
@@ -42,7 +47,7 @@ export const Product = ({ addToCart }: Props) => {
 
   return (
     <>
-      {isImageSlideModalOpen && (
+      {isImageSlideModalOpen && isDesktopOrLaptop && (
         <ImageSlideModal
           closeImageSlideModal={closeImageSlideModal}
           defaultImageId={selectedImageId}
@@ -66,7 +71,7 @@ export const Product = ({ addToCart }: Props) => {
             </button>
             <img
               onClick={() => setIsImageSlideModalOpen(true)}
-              className="h-full w-full object-cover lg:rounded-xl"
+              className="h-full w-full cursor-pointer object-cover lg:rounded-xl"
               src={images[selectedImageId]}
               alt="sneakers"
             />
