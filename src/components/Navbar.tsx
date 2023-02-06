@@ -2,19 +2,18 @@ import logoIcon from "../images/logo.svg";
 import cartIcon from "../images/icon-cart.svg";
 import avatarIcon from "../images/image-avatar.png";
 import burgerMenu from "../images/icon-menu.svg";
-import deleteIcon from "../images/icon-delete.svg";
-import closeIcon from "../images/icon-close.svg";
 import { useState } from "react";
-import { Product } from "../App";
+import { IProduct } from "../App";
 import { CartModal } from "./CartModal";
 import { BurgerMenu } from "./BurgerMenu";
 
 interface Props {
-  cart: Product[];
+  cart: IProduct[];
   clearCart: () => void;
+  removeProductFromCart: (id: number) => void;
 }
 
-export const Navbar = ({ cart, clearCart }: Props) => {
+export const Navbar = ({ cart, clearCart, removeProductFromCart }: Props) => {
   const [isCartModalOpen, setIsCartModalOpen] = useState(false);
   const [isBurgerMenuOpen, setIsBurgerMenuOpen] = useState(false);
 
@@ -28,8 +27,8 @@ export const Navbar = ({ cart, clearCart }: Props) => {
   return (
     <div className="mx-[6%] flex items-center justify-between py-4 lg:mx-[11.5%] lg:border-b lg:py-9">
       <div className="flex items-center gap-4 lg:gap-14">
-        <button onClick={openBurgerMenu}>
-          <img className="lg:hidden" src={burgerMenu} alt="menu" />
+        <button className="lg:hidden" onClick={openBurgerMenu}>
+          <img src={burgerMenu} alt="menu" />
         </button>
         {isBurgerMenuOpen && (
           <>
@@ -71,6 +70,8 @@ export const Navbar = ({ cart, clearCart }: Props) => {
             cart={cart}
             clearCart={clearCart}
             closeCartModal={closeCartModal}
+            cartQuantity={cartQuantity}
+            removeProductFromCart={removeProductFromCart}
           />
         )}
         <img

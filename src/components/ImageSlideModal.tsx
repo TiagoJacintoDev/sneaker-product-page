@@ -3,14 +3,7 @@ import previous from "../images/icon-previous.svg";
 import next from "../images/icon-next.svg";
 import close from "../images/icon-close.svg";
 import { useState } from "react";
-import productImage1 from "../images/image-product-1.jpg";
-import productImage2 from "../images/image-product-2.jpg";
-import productImage3 from "../images/image-product-3.jpg";
-import productImage4 from "../images/image-product-4.jpg";
-import productImageThumb1 from "../images/image-product-1-thumbnail.jpg";
-import productImageThumb2 from "../images/image-product-2-thumbnail.jpg";
-import productImageThumb3 from "../images/image-product-3-thumbnail.jpg";
-import productImageThumb4 from "../images/image-product-4-thumbnail.jpg";
+import { images, thumbImages } from "../constants/images";
 
 interface Props {
   closeImageSlideModal: () => void;
@@ -22,13 +15,6 @@ export const ImageSlideModal = ({
   defaultImageId = 0,
 }: Props) => {
   const [selectedImageId, setSelectedImageId] = useState(defaultImageId);
-  const images = [productImage1, productImage2, productImage3, productImage4];
-  const thumbImages = [
-    productImageThumb1,
-    productImageThumb2,
-    productImageThumb3,
-    productImageThumb4,
-  ];
 
   const selectPreviousImage = () => {
     setSelectedImageId((prev) => (prev - 1 < 0 ? images.length - 1 : prev - 1));

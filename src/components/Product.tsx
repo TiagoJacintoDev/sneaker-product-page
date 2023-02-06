@@ -1,23 +1,14 @@
-import productImage1 from "../images/image-product-1.jpg";
-import productImage2 from "../images/image-product-2.jpg";
-import productImage3 from "../images/image-product-3.jpg";
-import productImage4 from "../images/image-product-4.jpg";
-import productImageThumb1 from "../images/image-product-1-thumbnail.jpg";
-import productImageThumb2 from "../images/image-product-2-thumbnail.jpg";
-import productImageThumb3 from "../images/image-product-3-thumbnail.jpg";
-import productImageThumb4 from "../images/image-product-4-thumbnail.jpg";
 import cart from "../images/icon-cart.svg";
 import previous from "../images/icon-previous.svg";
 import next from "../images/icon-next.svg";
 import { useState } from "react";
 import { ImageSlideModal } from "./ImageSlideModal";
 import { useMediaQuery } from "react-responsive";
+import { IProduct } from "../App";
+import { images, thumbImages } from "../constants/images";
 
 interface Props {
-  addToCart: (
-    product: { id: number; name: string; price: number; image: string },
-    quantity: number
-  ) => void;
+  addToCart: (product: Omit<IProduct, "quantity">, quantity: number) => void;
 }
 
 export const Product = ({ addToCart }: Props) => {
@@ -26,13 +17,6 @@ export const Product = ({ addToCart }: Props) => {
   });
 
   const [productQuantity, setProductQuantity] = useState(1);
-  const images = [productImage1, productImage2, productImage3, productImage4];
-  const thumbImages = [
-    productImageThumb1,
-    productImageThumb2,
-    productImageThumb3,
-    productImageThumb4,
-  ];
   const [selectedImageId, setSelectedImageId] = useState(0);
   const [isImageSlideModalOpen, setIsImageSlideModalOpen] = useState(false);
   const closeImageSlideModal = () => setIsImageSlideModalOpen(false);
@@ -116,7 +100,7 @@ export const Product = ({ addToCart }: Props) => {
               </span>
             </div>
             <div className="mt-8 flex gap-4 max-lg:flex-col">
-              <div className="flex items-center justify-between gap-4 rounded-lg bg-neutral-light-grayish-blue px-6 font-bold max-lg:py-3">
+              <div className="flex flex-1 items-center justify-between gap-4 rounded-lg bg-neutral-light-grayish-blue px-6 font-bold max-lg:py-3">
                 <button
                   className="mb-1.5 text-3xl text-primary-orange"
                   onClick={() =>
@@ -134,7 +118,7 @@ export const Product = ({ addToCart }: Props) => {
                 </button>
               </div>
               <button
-                className="flex justify-center gap-4 rounded-lg bg-primary-orange p-5 font-bold text-white shadow-[0_20px_50px_-20px] shadow-primary-orange transition-all duration-300 hover:opacity-70"
+                className="flex flex-1 justify-center gap-4 rounded-lg bg-primary-orange p-5 font-bold text-white shadow-[0_20px_50px_-20px] shadow-primary-orange transition-all duration-300 hover:opacity-70"
                 onClick={() =>
                   addToCart(
                     {
